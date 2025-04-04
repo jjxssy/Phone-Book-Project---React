@@ -1,4 +1,8 @@
-# React + Vite
+# Phone Book
+Implemented with React.js with a help of an AI.
+Containing routing, login page and a nav bar.
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
