@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Header, Footer } from '../components/';
+import { Header, Footer, Navbar } from '../components/';
 import { ContactList } from '../components/contactList/';
 import { Home } from '../components/home/';
 import { Terms } from '../components/terms/';
@@ -27,8 +27,19 @@ function App() {
         
         <main className={pageClasses.main}>
           <Routes>
-            <Route 
+          <Route 
               path="/" 
+              element={
+                user ? (
+                  <Navigate to="/contacts" replace />
+                ) : (
+                  <Home onLogin={handleLogin} />
+                )
+              } 
+            />
+
+            <Route 
+              path="/home" 
               element={
                 user ? (
                   <Navigate to="/contacts" replace />
